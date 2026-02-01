@@ -1,0 +1,12 @@
+Packages
+-> for safe area view for andriod is
+    * npx expo install react-native-safe-area-view
+--------------------- ------------------------------------------------
+Components and tags
+
+-> Text
+-> button
+-> View
+-> TouchableOpacity(Clicking effect)
+-> SafeAreaView(Status bar)
+-> Image
