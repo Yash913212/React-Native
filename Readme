@@ -1,4 +1,8 @@
 Packages
+
+Commands to create the new project is 
+ ->npx create-expo-app app --template blank
+
 -> for safe area view for andriod is
     * npx expo install react-native-safe-area-view
 --------------------- ------------------------------------------------
@@ -10,3 +14,62 @@ Components and tags
 -> TouchableOpacity(Clicking effect)
 -> SafeAreaView(Status bar)
 -> Image
+
+----------------------------------------------------------------------
+
+Stack Navigations
+
+1) We have to develop the screens to work the stack Navigations
+2)We have to install the Packages
+
+They are
+    ->
+    ->
+    ->
+    ->
+    ->
+
+
+ ** Structure to create Navigation **
+
+*** Native-Stack-Navigation is the proper one to develop rather than stack-navigation *** 
+
+<NavigationContainer>
+    <Stack.Navigator
+     screenOptions={{  //While styling of screen
+        title: "Hai"  //for the title of the screen
+
+        headerShown: false //for removing the nav bar
+
+        headerStyle:{     //for stylings
+            backgroundColor: "red"
+        }
+
+        headerTintColor: "red" //for header color
+
+        headerTitleStyle:{  //height of the title  
+            fontSize: 18
+        }
+
+        headerTitleAlign: "center"  //this is only for android For IOS it is default
+
+        //For icon we have to import icon from react-native-paper
+        headerRight:()=><Icon source={"Bell"} size={20} />
+        headerLeft:()=><Icon source={"Home"} size={20} />  //it leans to disable back button and function
+
+
+        headerBackButtonDisplayMode:"minimal" //It is to disable a ios back button name
+
+        animation:"fade"  //they have pre defined animation while development
+
+
+     }}
+    >
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Contact" component={Contact} />
+    <Stack.Navigator>    
+<NavigationContainer>
+
+
+---> Sending data between screens
+ We have to send from one screen to other by the use of Routes "useRoute"
