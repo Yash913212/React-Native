@@ -4,20 +4,18 @@ import { StyleSheet, Text, View } from "react-native";
 export default function App() {
     return ( <
         View style = { styles.container } >
-        <
-        Text > Open up App.js to start working on your app! < /Text>
+        
+        <Text > Open up App.js to start working on your app! </Text>
 
         <
         Button mode = "contained"
         onPress = {
             () => console.log("Pressed") } >
-        Press me { " " } <
-        /Button>
+        Press me { " " } 
+        </Button>
 
-        <
-        StatusBar style = "auto" / >
-        <
-        /View>
+        <StatusBar style = "auto" / >
+        </View>
     );
 }
 
