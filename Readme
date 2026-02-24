@@ -1,0 +1,124 @@
+Packages
+
+Commands to create the new project is 
+ ->npx create-expo-app app --template blank
+
+-> for safe area view for andriod is
+    * npx expo install react-native-safe-area-view
+--------------------- ------------------------------------------------
+Components and tags
+
+-> Text
+-> button
+-> View
+-> TouchableOpacity(Clicking effect)
+-> SafeAreaView(Status bar)
+-> Image
+
+----------------------------------------------------------------------
+
+Stack Navigations
+
+1) We have to develop the screens to work the stack Navigations
+2)We have to install the Packages
+
+They are
+    -> npx expo install react-native-screens react-native-safe-area-context
+    -> npm install @react-navigation/native
+    -> npm install @react-navigation/native-stack
+    -> npm install @react-navigation/stack
+
+
+ ** Structure to create Navigation **
+
+*** Native-Stack-Navigation is the proper one to develop rather than stack-navigation *** 
+
+<NavigationContainer>
+    <Stack.Navigator
+     screenOptions={{  //While styling of screen
+        title: "Hai"  //for the title of the screen
+
+        headerShown: false //for removing the nav bar
+
+        headerStyle:{     //for stylings
+            backgroundColor: "red"
+        }
+
+        headerTintColor: "red" //for header color
+
+        headerTitleStyle:{  //height of the title  
+            fontSize: 18
+        }
+
+        headerTitleAlign: "center"  //this is only for android For IOS it is default
+
+        //For icon we have to import icon from react-native-paper
+        headerRight:()=><Icon source={"Bell"} size={20} />
+        headerLeft:()=><Icon source={"Home"} size={20} />  //it leans to disable back button and function
+
+
+        headerBackButtonDisplayMode:"minimal" //It is to disable a ios back button name
+
+        animation:"fade"  //they have pre defined animation while development
+
+
+     }}
+    >
+        <Stack.Screen name="Home" component={Home} />
+        <Stack.Screen name="Contact" component={Contact} />
+    <Stack.Navigator>    
+<NavigationContainer>
+
+
+---> Sending data between screens
+ We have to send from one screen to other by the use of Routes "useRoute"
+
+-------------------------------------------------------------------------
+
+Bottom Tab Navigation
+
+1) We have to install the packages
+    -> npm install @react-navigation/bottom-tabs
+    -> npm install react-native-vector-icons  //Lets check the icons in the react-native-vector-icons
+
+We have to import NavigationContainer form @react-navigation/native 
+We have to import createBottomTabNavigator form @react-navigation/bottom-tabs
+
+<NavigationContainer>
+    <BottomTabNavigation.Navigator
+        screenOptions={{
+
+            tabBarActiveTintColor: "red", //for active color
+
+            tabBarInactiveTintColor: "blue", //for inactive color
+
+            tabBarLabelStyle:{fontSize: 15 , borderWidth: 1}, //for label styling
+
+            tabBarIcon:({color,size})=><Icon source={"Home"} size={size} color={color} /> //for icons in the bottom navigation
+
+            tabBarItemStyle:{backgroundColor: "red"} //for styling the bottom navigation
+
+            tabBarStyle:{height: 60} //for styling the bottom navigation  
+        }}
+
+        screenOptions={({route})=>({  //for different icons in the bottom navigation
+            tabBarIcon:({focused,color,size})=>{
+                let iconName;
+                if(route.name === "Home"){
+                    iconName = focused ? "Home" : "home-outline"
+                }else if(route.name === "Contact"){
+                    iconName = focused ? "Contact" : "contact-outline"
+                }
+                return <Icon source={iconName} size={size} color={color} />
+                tabBarActiveTintColor: "indigo", //for active color
+                tabBarInactiveTintColor: "black", //for inactive color
+            }
+        })}
+    >               //It will provide both the navigation.
+        <BottomTabNavigation.Screen name="Home" component={Home} />
+        <BottomTabNavigation.Screen name="Contact" component={Contact} />
+    </BottomTabNavigation.Navigator>
+</NavigationContainer>
+
+
+For Home page we have to import useNavigation from @react-navigation/native and we have to use the navigation for the button to navigate to the contact page
