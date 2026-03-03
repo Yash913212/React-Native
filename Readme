@@ -4,7 +4,7 @@ Commands to create the new project is
  ->npx create-expo-app app --template blank
 
 -> for safe area view for andriod is
-    * npx expo install react-native-safe-area-view
+    * npx install react-native-safe-area-view
 --------------------- ------------------------------------------------
 Components and tags
 
@@ -122,3 +122,10 @@ We have to import createBottomTabNavigator form @react-navigation/bottom-tabs
 
 
 For Home page we have to import useNavigation from @react-navigation/native and we have to use the navigation for the button to navigate to the contact page
+
+--------------------------------------------------------------------------------
+
+Top Tab Navigation
+1) We have to install the packages
+    -> npm install @react-navigation/material-top-tabs react-native-tab-view
+
