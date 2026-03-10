@@ -136,7 +136,25 @@ For Home page we have to import useNavigation from @react-navigation/native and 
 --------------------------------------------------------------------------------
 
 Top Tab Navigation
-1) We have to install the packages
-    -> npm install @react-navigation/material-top-tabs react-native-tab-view
 
-We have to import createMaterialTopTabNavigator form @react-navigation/material-top-tabs
+1) We have to install the packages
+    -> npm install @react-navigation/material-top-tabs react-native-tab-view react-native-pager-view
+
+We have to import createMaterialTopTabNavigator from @react-navigation/material-top-tabs
+
+```javascript
+<NavigationContainer>
+    <TopTab.Navigator
+        screenOptions={{
+            tabBarActiveTintColor: "red", //for active color
+            tabBarInactiveTintColor: "gray", //for inactive color
+            tabBarLabelStyle: { fontSize: 15, fontWeight: "bold" }, //for label styling
+            tabBarIndicatorStyle: { backgroundColor: "blue", height: 3 }, //for the active tab indicator line
+            tabBarStyle: { backgroundColor: "white" } //for styling the top tab bar  
+        }}
+    >
+        <TopTab.Screen name="Home" component={Home} />
+        <TopTab.Screen name="Contact" component={Contact} />
+    </TopTab.Navigator>
+</NavigationContainer>
+```
